@@ -1,0 +1,54 @@
+{
+  // Network Attached Storage paths
+  // Replace with your actual NAS address and folder structure
+  "nas": {
+    // Main games directory on your NAS
+    "root": "\\\\YOUR-NAS-NAME\\Games",
+    
+    // System-specific game directories
+    "dos_games": "\\\\YOUR-NAS-NAME\\Games\\DOS",
+    "pc_games": "\\\\YOUR-NAS-NAME\\Games\\PC",
+    "iso_images": "\\\\YOUR-NAS-NAME\\Games\\ISO",
+    "gog_installers": "\\\\YOUR-NAS-NAME\\Games\\GOG",
+    
+    // Emulated systems
+    "rom_collections": {
+      "retroarch": "\\\\YOUR-NAS-NAME\\Games\\ROMs",
+      "ps3": "\\\\YOUR-NAS-NAME\\Games\\PS3",
+      "switch": "\\\\YOUR-NAS-NAME\\Games\\Switch"
+    }
+  },
+  // Local storage tiers - adjust to match your system's drive configuration
+  "local": {
+    // Fastest storage (NVMe/SSD) - for games that benefit most from fast loading
+    "high_performance": {
+      "path": "C:\\Games",
+      "available_space": 500000000000,  // Size in bytes (~500GB)
+      "priority": 1,  // Highest priority tier
+      "description": "High-speed storage for demanding games"
+    },
+    
+    // Medium speed storage - for games with moderate performance requirements
+    "medium_performance": {
+      "path": "D:\\Games", 
+      "available_space": 2000000000000,  // Size in bytes (~2TB)
+      "priority": 2,
+      "description": "Medium-speed storage for moderately demanding games"
+    },
+    
+    // Largest/slowest storage - for games with minimal loading requirements
+    "bulk_storage": {
+      "path": "E:\\Games",
+      "available_space": 4000000000000,  // Size in bytes (~4TB)
+      "priority": 3,
+      "description": "Bulk storage for older/less demanding games"
+    }
+  },
+  // Temporary storage for in-progress operations
+  "temporary": "C:\\Temp\\GameInstalls",
+  
+  // Application data storage
+  // Using environment variables to ensure compatibility across different Windows user profiles
+  "database": "%LOCALAPPDATA%\\ES-DE-GameManager\\database.sqlite",
+  "logs": "%LOCALAPPDATA%\\ES-DE-GameManager\\logs"
+}
